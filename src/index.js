@@ -1,9 +1,13 @@
 const express = require("express");
+const getUser = require("./model/user");
 const app = express();
 
 app.use = express.json();
-app.get("/", (req,res) =>{
-    res.status(200).json({message: "qualquer coisa"})
+
+
+app.get("/", async(req,res) =>{
+  const users = await getUser();
+  res.status(200).json({users});
 })
 
 
