@@ -6,7 +6,6 @@ const getUser = async() =>{
   const [users] = await connection.execute(sql);
   //console.log(users);
   return users;
-}  
-
+}
 
 module.exports = getUser;
